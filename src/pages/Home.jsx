@@ -18,11 +18,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[760px] overflow-hidden bg-ink text-white">
         <img
-          src="/assets/images/hero.jpg"
+          src="/assets/images/hero.png"
           alt="rare infra project"
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
+          className="absolute inset-0 h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-black/10" />
         <div className="hero-grid absolute inset-0 opacity-30" />
         <div className="container-site relative flex min-h-[760px] items-end pb-20 pt-32 sm:pb-24">
           <div className="max-w-4xl reveal">
