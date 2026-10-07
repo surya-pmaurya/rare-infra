@@ -16,7 +16,7 @@ export default function Header() {
   const navClass = ({ isActive }) =>
     `text-sm font-semibold transition ${isActive ? "text-accent" : "text-white/75 hover:text-white"}`;
   return (
-    <header className="absolute left-0 right-0 top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
       <div className="container-site flex h-20 items-center justify-between">
         <Link
           to="/"
@@ -24,9 +24,9 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <img
-            src="/assets/logos/x6.jpeg"
+            src="/assets/logos/rareinfra.png"
             alt="rare infra"
-            className="h-10 w-10 rounded-full bg-white object-contain"
+            className="h-14 w-14 rounded-full bg-neutral object-contain"
           />
           <div className="leading-none">
             <div className="font-display text-xl font-extrabold tracking-tight">
@@ -39,12 +39,7 @@ export default function Header() {
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map(([to, label]) => (
-            <NavLink
-              key={label}
-              to={to}
-              end={to === "/"}
-              className={navClass}
-            >
+            <NavLink key={label} to={to} end={to === "/"} className={navClass}>
               {label}
             </NavLink>
           ))}

@@ -1,9 +1,10 @@
+// Company details 
 export const company = {
   name: "rare infra",
   group: "rare biz group",
   tagline: "Varied Aspirations. End-to-end solutions.",
   description:
-    "rare infra is an end-to-end solution provider from inception to completion, offering turnkey solutions across construction, interiors, retail and hospitality.",
+    "is an end-to-end solution provider from inception to completion, offering turnkey solutions across construction, interiors, retail and hospitality.",
   vision:
     "To be one among the elite of end-to-end solution providers in the Construction, Retail and Hospitality industry delivering world-class products and services in the global market.",
   mission:
@@ -12,8 +13,16 @@ export const company = {
   email: "nirala.maurya@rarebizgroup.com",
   website: "www.rarebizgroup.com",
   offices: [
-    "Bengaluru — #301, JMD Home, No–123/2, KV Muniyappa Garden Layout, KR Puram, Bengaluru – 560036 KA",
-    "Hyderabad — #78, Maytri Suvidha, Nagaram, Mansanapalli Road, Maheshwaram, Hyderabad – 501218 TS",
+    {
+      city: "Bengaluru",
+      address:
+        "#301, JMD Homes Apartment, KV Muniyappa Garden Layout, KR Puram, Bengaluru – 560036 KA",
+    },
+    {
+      city: "Hyderabad",
+      address:
+        "#78, Maytri Suvidha, Nagaram, Mansanapalli Road, Maheshwaram, Hyderabad – 501218 TS",
+    },
   ],
 };
 
@@ -24,16 +33,17 @@ export const stats = [
   { value: "106", label: "Acres plotting development in progress" },
 ];
 
+// Services list
 export const services = [
   {
     title: "Contracting",
     text: "Civil construction, MEP and interior solutions with modern construction technologies.",
-    image: "/assets/images/about.jpg",
+    image: "/assets/images/contract.jpg",
   },
   {
     title: "Turnkey Solutions",
     text: "From transaction and design to contracting and project management, delivered as one integrated solution.",
-    image: "/assets/images/hero.jpg",
+    image: "/assets/images/turnkey.jpg",
   },
   {
     title: "Residential",
@@ -57,6 +67,7 @@ export const services = [
   },
 ];
 
+// Projects list
 export const projects = [
   {
     slug: "indukuri-4bhk-villas",
@@ -154,6 +165,27 @@ export const projects = [
   },
 ];
 
+// Social links
+export const socialLinks = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/",
+  },
+];
+
+// Gallery images 
 export const gallery = [
   "/assets/gallery/73.jpeg",
   "/assets/gallery/74.jpeg",
@@ -178,6 +210,7 @@ export const gallery = [
   "/assets/gallery/240.jpeg",
 ];
 
+// Testimonials list
 export const testimonials = [
   {
     quote:
@@ -199,26 +232,27 @@ export const testimonials = [
   },
 ];
 
+// Partners logos
 export const partnerLogos = [
-  "251.jpeg",
-  "252.png",
-  "253.jpeg",
-  "254.jpeg",
-  "255.jpeg",
-  "256.jpeg",
-  "257.jpeg",
-  "258.jpeg",
-  "259.png",
-  "261.jpeg",
-  "262.jpeg",
-  "265.png",
-  "266.png",
-  "267.jpeg",
-  "268.png",
-  "269.jpeg",
-  "270.jpeg",
-  "271.jpeg",
-  "272.png",
-  "273.png",
-  "274.png",
+  "olive.png",
+  "itc.png",
+  "totalenv.jpeg",
+  "inmark.jpeg",
+  "breadnmore.jpeg",
+  "m2k.jpeg",
+  "kwality.jpeg",
+  "elica.jpeg",
+  "heritage.jpg",
+  "minda.jpeg",
+  "modernschool.jpeg",
+  "shreyainfra.png",
+  "fortunesquare.png",
+  "greencounty.jpeg",
+  "turtle.png",
+  "dao.jpeg",
+  "prosavers.jpeg",
+  "greenfields.jpeg",
+  "punjlloyd.png",
+  "rajdeep.png",
+  "indukuri.png",
 ].map((file) => `/assets/logos/${file}`);

@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { company } from "../data/siteData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { socialIcons } from "../config/socialIcons";
+import { socialLinks } from "../data/siteData";
 
 export default function Footer() {
+
   return (
     <footer className="bg-ink text-white">
       <div className="container-site py-16 sm:py-20">
@@ -10,7 +14,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <img
-                src="/assets/logos/x6.jpeg"
+                src="/assets/logos/rareinfra.jpeg"
                 alt="rare infra"
                 className="h-11 w-11 rounded-full bg-white object-contain"
               />
@@ -24,21 +28,22 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-6 max-w-lg text-sm leading-7 text-white/60">
+              <span className="font-bold text-white/70">{company.name} </span>
               {company.description}
             </p>
-            <div className="mt-7 flex gap-3">
-              <a
-                className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-white/70 hover:border-accent hover:text-white"
-                href="#"
-              >
-                LinkedIn
-              </a>
-              <a
-                className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-white/70 hover:border-accent hover:text-white"
-                href="#"
-              >
-                Instagram
-              </a>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/60 transition hover:bg-black hover:text-white hover:border-accent"
+                >
+                  <FontAwesomeIcon icon={socialIcons[social.name]} />
+                </a>
+              ))}
             </div>
           </div>
           <div>
@@ -51,7 +56,7 @@ export default function Footer() {
                   <Link
                     key={x}
                     to={`/${x.toLowerCase()}`}
-                    className="hover:text-white"
+                    className="hover:text-white transition-colors"
                   >
                     {x}
                   </Link>
@@ -74,11 +79,24 @@ export default function Footer() {
               </div>
               <div className="flex gap-3">
                 <Mail size={17} className="mt-0.5 shrink-0" />
-                <span>{company.email}</span>
+                <div>
+                  <a
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                      company.email,
+                    )}&su=${encodeURIComponent("Project Enquiry")}&body=${encodeURIComponent(
+                      "Hello Rare Infra,\n\nI would like to discuss a project with you.",
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-white"
+                  >
+                    {company.email}
+                  </a>
+                </div>
               </div>
               <div className="flex gap-3">
                 <MapPin size={17} className="mt-0.5 shrink-0" />
-                <span>Bengaluru · Hyderabad</span>
+                <div>Bengaluru · Hyderabad</div>
               </div>
             </div>
             <Link
@@ -90,11 +108,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
-          <span>
+          <div>
             © {new Date().getFullYear()} rare infra / rare biz group. All rights
             reserved.
-          </span>
-          <span>Construction · Retail · Hospitality · Interiors</span>
+          </div>
+          <div>Construction · Retail · Hospitality · Interiors</div>
         </div>
       </div>
     </footer>

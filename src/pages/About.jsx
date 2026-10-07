@@ -12,7 +12,7 @@ export default function About() {
             <span className="text-accent">inception to completion.</span>
           </h1>
           <p className="mt-7 max-w-3xl text-base leading-8 text-black/60">
-            {company.description} The company profile describes expertise
+            The company profile describes expertise
             spanning construction, interior, retail and hospitality, backed by
             experienced professionals and a commitment to client aspirations.
           </p>

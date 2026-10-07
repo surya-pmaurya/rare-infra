@@ -41,12 +41,15 @@ export default function Contact() {
                   <div className="text-xs font-bold uppercase tracking-widest text-black/35">
                     Offices
                   </div>
-                  {company.offices.map((o) => (
+                  {company.offices.map((office) => (
                     <div
-                      key={o}
+                      key={office.city}
                       className="mt-1 text-sm leading-6 text-black/60"
                     >
-                      {o}
+                      <strong className="font-bold text-ink">
+                        {office.city}
+                      </strong>{" "}
+                      — {office.address}
                     </div>
                   ))}
                 </div>

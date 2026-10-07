@@ -15,6 +15,7 @@ import {
 export default function Home() {
   return (
     <main>
+      {/* Hero Section */}
       <section className="relative min-h-[760px] overflow-hidden bg-ink text-white">
         <img
           src="/assets/images/hero.jpg"
@@ -34,7 +35,7 @@ export default function Home() {
               <span className="text-accent">with purpose.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
-              {company.description}
+              {company.name} {company.description}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/projects" className="btn-primary gap-2">
@@ -57,29 +58,16 @@ export default function Home() {
         </a>
       </section>
 
+      {/* About Section */}
       <section id="about" className="bg-paper py-20 sm:py-28">
-        <div className="container-site grid gap-14 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-[2rem] bg-black image-hover">
-            <img
-              src="/assets/images/about.jpg"
-              alt="rare infra workspace"
-              className="aspect-[4/5] h-full w-full object-cover"
-            />
-            <div className="absolute bottom-5 left-5 rounded-2xl bg-white/90 px-5 py-4 backdrop-blur">
-              <div className="font-display text-2xl font-extrabold">
-                TRUST + QUALITY
-              </div>
-              <div className="mt-1 text-xs text-black/50">
-                The purpose of rare infra
-              </div>
-            </div>
-          </div>
+        <div className="container-site max-w-8xl mx-auto">
           <div>
             <SectionHeading
               eyebrow="About rare infra"
-              title="Varied aspirations. One integrated team."
-              text={company.description}
+              title="Varied aspirations, One integrated team."
+              text={`${company.name} ${company.description}`}
             />
+
             <div className="mt-9 grid gap-6 sm:grid-cols-2">
               <div className="border-t border-black/10 pt-5">
                 <div className="font-display text-xl font-extrabold">
@@ -89,6 +77,7 @@ export default function Home() {
                   {company.vision}
                 </p>
               </div>
+
               <div className="border-t border-black/10 pt-5">
                 <div className="font-display text-xl font-extrabold">
                   Mission
@@ -98,13 +87,15 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
             <div className="mt-9 flex flex-wrap gap-2">
               {[
                 "Integrity",
                 "Responsibility",
                 "Commitment",
                 "Quality",
-                "EHS",
+                "Environment",
+                "Health and Safety",
               ].map((v) => (
                 <span
                   key={v}
@@ -118,6 +109,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
       <section className="bg-ink py-16 text-white sm:py-20">
         <div className="container-site grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
@@ -133,6 +125,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Section */}
       <section className="bg-paper py-20 sm:py-28">
         <div className="container-site">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
