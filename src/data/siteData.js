@@ -74,7 +74,7 @@ export const projects = [
     title: "Indukuri 4 BHK Villa Projects",
     category: "Residential",
     location: "Hyderabad",
-    image: "/assets/gallery/74.jpeg",
+    image: "/assets/gallery/74.jpg",
     summary:
       "Villa projects with internal electricals, plumbing and construction expertise.",
     details: ["224 villas", "25 acres of land", "Design, BOQ and construction"],
@@ -84,7 +84,7 @@ export const projects = [
     title: "Villa Projects",
     category: "Residential",
     location: "Kadapa, Andhra Pradesh",
-    image: "/assets/gallery/68.jpeg",
+    image: "/assets/gallery/68.png",
     summary:
       "Completed villa projects focused on ergonomics, quality and design.",
     details: [

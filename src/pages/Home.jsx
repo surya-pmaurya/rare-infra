@@ -42,6 +42,12 @@ export default function Home() {
                 Explore projects <ArrowUpRight size={17} />
               </Link>
               <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+              >
+                Get in touch <ArrowUpRight size={17} />
+              </Link>
+              <Link
                 to="/about"
                 className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-black"
               >
@@ -58,8 +64,24 @@ export default function Home() {
         </a>
       </section>
 
+      {/* Stats Section */}
+      <section className="bg-ink py-16 text-white sm:py-20">
+        <div className="container-site grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="border-l border-white/10 pl-5">
+              <div className="font-display text-4xl font-extrabold text-accent sm:text-5xl">
+                {s.value}
+              </div>
+              <div className="mt-2 text-xs uppercase tracking-[.12em] text-white/45">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* About Section */}
-      <section id="about" className="bg-paper py-20 sm:py-28">
+      <section id="about" className="bg-[#ebe8e2] py-20 sm:py-28">
         <div className="container-site max-w-8xl mx-auto">
           <div>
             <SectionHeading
@@ -109,22 +131,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-ink py-16 text-white sm:py-20">
-        <div className="container-site grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="border-l border-white/10 pl-5">
-              <div className="font-display text-4xl font-extrabold text-accent sm:text-5xl">
-                {s.value}
-              </div>
-              <div className="mt-2 text-xs uppercase tracking-[.12em] text-white/45">
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Services Section */}
       <section className="bg-paper py-20 sm:py-28">
         <div className="container-site">
@@ -169,6 +175,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects Section */}
       <section className="bg-[#ebe8e2] py-20 sm:py-28">
         <div className="container-site">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -181,124 +188,52 @@ export default function Home() {
               View all projects <ArrowUpRight size={16} />
             </Link>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {projects.slice(0, 4).map((p, i) => (
-              <ProjectCard key={p.slug} project={p} featured={i === 0} />
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+            {projects.slice(0, 3).map((p) => (
+              <ProjectCard key={p.slug} project={p} />
             ))}
           </div>
         </div>
       </section>
 
+      {/* Testimonials Section */}
       <section className="bg-paper py-20 sm:py-28">
-        <div className="container-site grid gap-14 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
-          <div>
-            <SectionHeading
-              eyebrow="The rare difference"
-              title="A holistic realty solution."
-              text="From designing and detailing to colour psychology, energy saving, environmental design, materials, project management, QA, QS and F&S development."
-            />
-            <ul className="mt-8 space-y-4 text-sm text-black/65">
-              {[
-                "Knowledge, expertise and commitment",
-                "Turnkey solutions from transaction to completion",
-                "Quality-centric project delivery",
-                "Responsible and experienced professionals",
-              ].map((x) => (
-                <li key={x} className="flex items-start gap-3">
-                  <span className="mt-0.5 rounded-full bg-accent p-1 text-white">
-                    <Check size={13} />
-                  </span>
-                  {x}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="grid grid-cols-2 gap-3 sm:gap-5">
-            <div className="image-hover overflow-hidden rounded-3xl">
-              <img
-                src="/assets/gallery/164.jpeg"
-                alt="Interior"
-                className="aspect-[4/5] w-full object-cover"
+        <div className="container-site">
+          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div>
+              <SectionHeading
+                eyebrow="Our people & principles"
+                title="Trust is built into the work."
+                text="rare infra is striving to become a brand for trust and quality, guided by integrity, responsibility and commitment."
               />
-            </div>
-            <div className="space-y-3 pt-10 sm:space-y-5 sm:pt-16">
-              <div className="image-hover overflow-hidden rounded-3xl">
-                <img
-                  src="/assets/gallery/166.jpeg"
-                  alt="Corporate interior"
-                  className="aspect-square w-full object-cover"
-                />
+              <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+                {testimonials.map((t) => (
+                  <blockquote
+                    key={t.role}
+                    className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm"
+                  >
+                    <div className="text-accent">“</div>
+                    <p className="mt-3 text-sm leading-6 text-black/70">
+                      {t.quote}
+                    </p>
+                    <footer className="mt-6 border-t border-black/10 pt-4">
+                      <div className="text-xs font-bold text-black">
+                        {t.name}
+                      </div>
+                      <div className="mt-1 text-[10px] uppercase tracking-[.18em] text-black/50">
+                        {t.role}
+                      </div>
+                    </footer>
+                  </blockquote>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-ink py-20 text-white sm:py-28">
-        <div className="container-site">
-          <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
-            <SectionHeading
-              light
-              eyebrow="Our people & principles"
-              title="Trust is built into the work."
-              text="rare infra is striving to become a brand for trust and quality, guided by integrity, responsibility and commitment."
-            />
-            <div className="grid gap-5 sm:grid-cols-3">
-              {testimonials.map((t) => (
-                <blockquote
-                  key={t.role}
-                  className="rounded-3xl border border-white/10 bg-white/[.03] p-6"
-                >
-                  <div className="text-accent">“</div>
-                  <p className="mt-3 text-sm leading-6 text-white/70">
-                    {t.quote}
-                  </p>
-                  <footer className="mt-6 border-t border-white/10 pt-4">
-                    <div className="text-xs font-bold">{t.name}</div>
-                    <div className="mt-1 text-[10px] uppercase tracking-[.18em] text-white/35">
-                      {t.role}
-                    </div>
-                  </footer>
-                </blockquote>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-paper py-20 sm:py-28">
-        <div className="container-site">
-          <div className="flex items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="Experience"
-              title="A glimpse of the work."
-            />
-            <Link
-              to="/gallery"
-              className="hidden text-sm font-bold hover:text-accent sm:inline-flex"
-            >
-              Open gallery <ArrowUpRight size={16} />
-            </Link>
-          </div>
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {gallery.slice(0, 8).map((src, i) => (
-              <Link
-                key={src}
-                to="/gallery"
-                className={`image-hover overflow-hidden rounded-2xl ${i === 0 || i === 5 ? "sm:col-span-2" : ""}`}
-              >
-                <img
-                  src={src}
-                  alt={`rare infra work ${i + 1}`}
-                  className="aspect-[4/3] h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Partners Section */}
       <section className="bg-[#ebe8e2] py-20 sm:py-24">
         <div className="container-site">
           <SectionHeading
@@ -320,25 +255,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="bg-accent py-16 text-white sm:py-20">
-        <div className="container-site flex flex-col justify-between gap-8 md:flex-row md:items-center">
-          <div>
-            <div className="text-xs font-bold uppercase tracking-[.24em] text-white/60">
-              Have a project in mind?
-            </div>
-            <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-              Let’s build something rare.
-            </h2>
-          </div>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
-          >
-            Get in touch <ArrowUpRight size={17} />
-          </Link>
         </div>
       </section>
     </main>

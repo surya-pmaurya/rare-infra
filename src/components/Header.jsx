@@ -24,7 +24,7 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <img
-            src="/assets/logos/rareinfra.png"
+            src="/assets/logos/rareinfra.jpeg"
             alt="rare infra"
             className="h-14 w-14 rounded-full bg-neutral object-contain"
           />
