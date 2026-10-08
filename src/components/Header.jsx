@@ -8,7 +8,6 @@ const links = [
   ["/projects", "Projects"],
   ["/gallery", "Gallery"],
   ["/clients", "Clients"],
-  ["/contact", "Contact"],
 ];
 
 export default function Header() {
@@ -16,7 +15,7 @@ export default function Header() {
   const navClass = ({ isActive }) =>
     `text-sm font-semibold transition ${isActive ? "text-accent" : "text-white/75 hover:text-white"}`;
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10">
+    <header className="fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/30">
       <div className="container-site flex h-20 items-center justify-between">
         <Link
           to="/"
@@ -26,7 +25,7 @@ export default function Header() {
           <img
             src="/assets/logos/rareinfra.jpeg"
             alt="rare infra"
-            className="h-14 w-14 rounded-full bg-neutral object-contain"
+            className="h-10 w-10 rounded-full bg-neutral object-contain"
           />
           <div className="leading-none">
             <div className="font-display text-xl font-extrabold tracking-tight">

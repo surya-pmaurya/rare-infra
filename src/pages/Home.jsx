@@ -1,10 +1,9 @@
-import { ArrowDown, ArrowUpRight, Check, Play } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "../components/SectionHeading";
 import ProjectCard from "../components/ProjectCard";
 import {
   company,
-  gallery,
   partnerLogos,
   projects,
   services,
@@ -46,12 +45,6 @@ export default function Home() {
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
               >
                 Get in touch <ArrowUpRight size={17} />
-              </Link>
-              <Link
-                to="/about"
-                className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-black"
-              >
-                Discover rare infra
               </Link>
             </div>
           </div>

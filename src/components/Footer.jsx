@@ -6,7 +6,6 @@ import { socialIcons } from "../config/socialIcons";
 import { socialLinks } from "../data/siteData";
 
 export default function Footer() {
-
   return (
     <footer className="bg-ink text-white">
       <div className="container-site py-16 sm:py-20">
@@ -31,7 +30,7 @@ export default function Footer() {
               <span className="font-bold text-white/70">{company.name} </span>
               {company.description}
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 mt-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -48,7 +47,7 @@ export default function Footer() {
           </div>
           <div>
             <div className="text-xs font-bold uppercase tracking-[.22em] text-accent">
-              Explore
+              Quick links
             </div>
             <div className="mt-5 grid gap-3 text-sm text-white/65">
               {["About", "Projects", "Gallery", "Clients", "Contact"].map(
@@ -72,8 +71,16 @@ export default function Footer() {
               <div className="flex gap-3">
                 <Phone size={17} className="mt-0.5 shrink-0" />
                 <div>
-                  {company.phone.map((p) => (
-                    <div key={p}>{p}</div>
+                  {company.phone.map((num, index) => (
+                    <span key={index}>
+                      <a
+                        href={`tel:${num.replace(/\s+/g, "")}`}
+                        className="transition-colors hover:text-white"
+                      >
+                        {num}
+                      </a>
+                      {index < company.phone.length - 1 && " · "}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -81,13 +88,7 @@ export default function Footer() {
                 <Mail size={17} className="mt-0.5 shrink-0" />
                 <div>
                   <a
-                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-                      company.email,
-                    )}&su=${encodeURIComponent("Project Enquiry")}&body=${encodeURIComponent(
-                      "Hello Rare Infra,\n\nI would like to discuss a project with you.",
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${company.email}?subject=${encodeURIComponent("Project Enquiry")}&body=${encodeURIComponent("Hello Rare Infra,\n\nI would like to discuss a project with you.")}`}
                     className="transition-colors hover:text-white"
                   >
                     {company.email}
@@ -107,9 +108,9 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            © {new Date().getFullYear()} rare infra / rare biz group. All rights
+            © Copyright {new Date().getFullYear()} rare infra. All rights
             reserved.
           </div>
           <div>Construction · Retail · Hospitality · Interiors</div>
