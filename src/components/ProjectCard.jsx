@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ProjectCard({ project, featured = false }) {
   return (
     <article
-      className={`group overflow-hidden rounded-3xl bg-white shadow-soft ${featured ? "lg:col-span-2" : ""}`}
+      className={`group overflow-hidden rounded-md bg-white shadow-soft ${featured ? "lg:col-span-2" : ""}`}
     >
       <Link
         to={`/projects/${project.slug}`}

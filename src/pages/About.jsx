@@ -64,7 +64,7 @@ export default function About() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {["Integrity", "Responsibility", "Commitment", "Quality"].map(
               (x, i) => (
-                <div key={x} className="rounded-3xl border border-black/10 p-7">
+                <div key={x} className="rounded-md border border-black/10 p-7">
                   <div className="text-5xl font-display font-extrabold text-accent">
                     0{i + 1}
                   </div>
@@ -88,7 +88,7 @@ export default function About() {
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
-            <div key={s.title} className="rounded-3xl bg-white p-7 shadow-soft">
+            <div key={s.title} className="rounded-md bg-white p-7 shadow-soft">
               <h3 className="font-display text-2xl font-extrabold">
                 {s.title}
               </h3>
