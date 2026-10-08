@@ -13,7 +13,7 @@ export default function Clients() {
           {partnerLogos.map((src, i) => (
             <div
               key={src + i}
-              className="flex min-h-32 items-center justify-center rounded-3xl bg-white p-7 shadow-soft"
+              className="flex min-h-32 items-center justify-center rounded-md bg-white p-7 shadow-soft"
             >
               <img
                 src={src}

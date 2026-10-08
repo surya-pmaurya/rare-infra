@@ -137,11 +137,11 @@ export default function Home() {
               Discuss your project <ArrowUpRight size={16} />
             </Link>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
             {services.map((s, i) => (
               <article
                 key={s.title}
-                className="group overflow-hidden rounded-3xl bg-white shadow-soft"
+                className="group overflow-hidden rounded-md bg-white shadow-soft"
               >
                 <div className="image-hover aspect-[16/10] overflow-hidden">
                   <img
@@ -182,7 +182,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
             {projects.slice(0, 3).map((p) => (
               <ProjectCard key={p.slug} project={p} />
             ))}
@@ -204,7 +204,7 @@ export default function Home() {
                 {testimonials.map((t) => (
                   <blockquote
                     key={t.role}
-                    className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm"
+                    className="rounded-md border border-black/10 bg-white p-6 shadow-sm"
                   >
                     <div className="text-accent">“</div>
                     <p className="mt-3 text-sm leading-6 text-black/70">

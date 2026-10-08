@@ -10,24 +10,34 @@ export default function Contact() {
     e.preventDefault();
     setStatus("Sending...");
 
-    // 1. Gather all form data using the 'name' attributes on inputs
     const formData = new FormData(e.target);
+    // Web3Forms Configuration
     formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
     formData.append("subject", "New Project Enquiry from Rare Infra Website");
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+    const googleScriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
-      const data = await response.json();
+    try {
+      // Fire both requests at the exact same time
+      const [web3Response] = await Promise.all([
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        }),
+        fetch(googleScriptUrl, {
+          method: "POST",
+          body: formData,
+          mode: "no-cors",
+        }),
+      ]);
+
+      const data = await web3Response.json();
 
       if (data.success) {
         setStatus("Message sent successfully! We will contact you soon.");
-        e.target.reset(); // Clear the form
+        e.target.reset();
       } else {
-        setStatus("Something went wrong. Please try again.");
+        setStatus("Something went wrong with the email. Please try again.");
       }
     } catch (error) {
       console.error("Form submission error:", error);
@@ -124,6 +134,7 @@ export default function Contact() {
                   required
                   className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
                   placeholder="Your name"
+                  autoComplete="name"
                 />
               </label>
               <label className="text-xs font-bold">
@@ -140,6 +151,7 @@ export default function Contact() {
                   }}
                   className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
                   placeholder="+91  9876543210"
+                  autoComplete="phone"
                 />
               </label>
               <label className="text-xs font-bold sm:col-span-2">
@@ -150,6 +162,7 @@ export default function Contact() {
                   required
                   className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
                   placeholder="you@example.com"
+                  autoComplete="email"
                 />
               </label>
               <label className="text-xs font-bold sm:col-span-2">
@@ -175,6 +188,7 @@ export default function Contact() {
                   rows="6"
                   className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
                   placeholder="Tell us a little about your project..."
+                  autoComplete="message"
                 />
               </label>
             </div>
@@ -182,7 +196,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "Sending..."}
-              className="mt-6 w-full rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-white transition hover:bg-accent disabled:opacity-70 disabled:cursor-not-allowed"
+              className="mt-6 w-full rounded-full bg-accent/90 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-accent hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === "Sending..." ? "Sending..." : "Send enquiry"}
             </button>

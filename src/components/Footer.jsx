@@ -38,7 +38,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/60 transition hover:bg-black hover:text-white hover:border-accent"
+                  className="flex h-8 w-8 items-center justify-center rounded-md border border-white/20 text-white/60 transition hover:bg-black hover:text-white hover:border-white/70 hover:scale-105"
                 >
                   <FontAwesomeIcon icon={socialIcons[social.name]} />
                 </a>
