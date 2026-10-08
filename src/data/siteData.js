@@ -39,31 +39,61 @@ export const services = [
     title: "Contracting",
     text: "Civil construction, MEP and interior solutions with modern construction technologies.",
     image: "/assets/images/contract.jpg",
+    features: [
+      "Integrated planning & design",
+      "MEP engineering & execution",
+      "Modern formwork technologies"
+    ]
   },
   {
     title: "Turnkey Solutions",
     text: "From transaction and design to contracting and project management, delivered as one integrated solution.",
     image: "/assets/images/turnkey.jpg",
+    features: [
+      "End-to-end project management",
+      "Budgeting & Quantity Surveying",
+      "Seamless final handover"
+    ]
   },
   {
     title: "Residential",
     text: "Apartments, villas and farm houses with design, BOQ, construction and interior expertise.",
     image: "/assets/images/residential.jpg",
+    features: [
+      "Custom villa & apartment design",
+      "Vastu-compliant architecture",
+      "Premium interior finishing"
+    ]
   },
   {
     title: "Corporate & Retail",
     text: "Workplaces, retail stores, fixtures, interiors and integrated workplace systems.",
     image: "/assets/images/corporate.jpg",
+    features: [
+      "Ergonomic workspace design",
+      "Retail layout optimization",
+      "Brand-aligned aesthetics"
+    ]
   },
   {
     title: "Hospitality",
     text: "Civil and interior work for restaurants, hotels and hospitality spaces.",
     image: "/assets/images/hospitality.jpg",
+    features: [
+      "Luxury interior detailing",
+      "Commercial kitchen planning",
+      "Guest experience optimization"
+    ]
   },
   {
     title: "Plotting",
     text: "Site survey, levelling, design, BOQ, planning and complete development solutions.",
     image: "/assets/images/plotting.jpg",
+    features: [
+      "Topographical site surveys",
+      "Land levelling & grading",
+      "Regulatory approvals support"
+    ]
   },
 ];
 
@@ -122,7 +152,7 @@ export const projects = [
     title: "Corporate Interior Work",
     category: "Corporate",
     location: "Hyderabad",
-    image: "/assets/gallery/46.jpeg",
+    image: "/assets/images/about.jpeg",
     summary:
       "Design and interior work including fixtures supply and installation.",
     details: [
@@ -187,7 +217,7 @@ export const socialLinks = [
 
 // Gallery images 
 export const gallery = [
-  "/assets/gallery/73.jpeg",
+  "/assets/gallery/interior.jpeg",
   "/assets/gallery/74.jpeg",
   "/assets/gallery/75.jpeg",
   "/assets/gallery/164.jpeg",
