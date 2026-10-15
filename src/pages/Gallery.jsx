@@ -10,7 +10,7 @@ export default function Gallery() {
         <SectionHeading
           eyebrow="Gallery"
           title="Spaces, details and places."
-          text="Image assets have been extracted from the supplied company profile so the showcase can work without a backend or external image dependency."
+          text="A glimpse into our work, showcasing the spaces we have created and the attention to detail that defines our projects."
         />
         <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
           {gallery.map((src, i) => (

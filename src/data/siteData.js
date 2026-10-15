@@ -1,4 +1,4 @@
-// Company details 
+// Company details
 export const company = {
   name: "rare infra",
   group: "rare biz group",
@@ -39,31 +39,61 @@ export const services = [
     title: "Contracting",
     text: "Civil construction, MEP and interior solutions with modern construction technologies.",
     image: "/assets/images/contract.jpg",
+    features: [
+      "Integrated planning & design",
+      "MEP engineering & execution",
+      "Modern formwork technologies",
+    ],
   },
   {
     title: "Turnkey Solutions",
     text: "From transaction and design to contracting and project management, delivered as one integrated solution.",
     image: "/assets/images/turnkey.jpg",
+    features: [
+      "End-to-end project management",
+      "Budgeting & Quantity Surveying",
+      "Seamless final handover",
+    ],
   },
   {
     title: "Residential",
     text: "Apartments, villas and farm houses with design, BOQ, construction and interior expertise.",
     image: "/assets/images/residential.jpg",
+    features: [
+      "Custom villa & apartment design",
+      "Vastu-compliant architecture",
+      "Premium interior finishing",
+    ],
   },
   {
     title: "Corporate & Retail",
     text: "Workplaces, retail stores, fixtures, interiors and integrated workplace systems.",
     image: "/assets/images/corporate.jpg",
+    features: [
+      "Ergonomic workspace design",
+      "Retail layout optimization",
+      "Brand-aligned aesthetics",
+    ],
   },
   {
     title: "Hospitality",
     text: "Civil and interior work for restaurants, hotels and hospitality spaces.",
     image: "/assets/images/hospitality.jpg",
+    features: [
+      "Luxury interior detailing",
+      "Commercial kitchen planning",
+      "Guest experience optimization",
+    ],
   },
   {
     title: "Plotting",
     text: "Site survey, levelling, design, BOQ, planning and complete development solutions.",
     image: "/assets/images/plotting.jpg",
+    features: [
+      "Topographical site surveys",
+      "Land levelling & grading",
+      "Regulatory approvals support",
+    ],
   },
 ];
 
@@ -74,23 +104,31 @@ export const projects = [
     title: "Indukuri 4 BHK Villa Projects",
     category: "Residential",
     location: "Hyderabad",
-    image: "/assets/gallery/74.jpg",
+    image: "/assets/projects/indukuri.jpg",
     summary:
       "Villa projects with internal electricals, plumbing and construction expertise.",
-    details: ["224 villas", "25 acres of land", "Design, BOQ and construction"],
+    details: [
+      "Work which meet the highest standards in terms of ergonomics, quality and design",
+      "Internal and External Plumbing Work",
+      "Internal Electricals Work",
+      "224 villas",
+      "25 acres of land",
+      "Design, BOQ and construction",
+    ],
   },
   {
     slug: "kadapa-villa-projects",
     title: "Villa Projects",
     category: "Residential",
     location: "Kadapa, Andhra Pradesh",
-    image: "/assets/gallery/68.png",
+    image: "/assets/projects/kadapa-villa.jpg",
     summary:
       "Completed villa projects focused on ergonomics, quality and design.",
     details: [
-      "Villa projects completed",
-      "Custom furniture",
-      "Design and construction",
+      "Work which meet the highest standards in terms of ergonomics, quality and design",
+      "Custom furniture and Interior work",
+      "Complete Design, BOQ, and construction",
+      "Completed 12 villas in Kadapa, Andhra Pradesh",
     ],
   },
   {
@@ -98,23 +136,29 @@ export const projects = [
     title: "Hotel Project",
     category: "Hospitality",
     location: "Mashobra, Shimla",
-    image: "/assets/gallery/221.jpeg",
+    image: "/assets/projects/mashobra-hotel.jpg",
     summary:
       "Civil, flooring, elevation and plumbing work for an 8-tower hospitality project.",
-    details: ["8 towers", "128 rooms", "Civil and interior work"],
+    details: [
+      "Turnkey project",
+      "Flooring and Elevation Work",
+      "Internal and External Plumbing Work",
+      "Civil and interior work",
+      "8 Towers & 128 Rooms",
+    ],
   },
   {
     slug: "maheswaram-plotting",
     title: "Plotting Development",
     category: "Plotting",
     location: "Maheswaram, Hyderabad",
-    image: "/assets/gallery/129.jpeg",
+    image: "/assets/projects/maheswaram-plotting.jpg",
     summary:
       "Turnkey plotting development including site survey, levelling and planning.",
     details: [
-      "15 acres completed",
-      "5 acres completed",
-      "Design, BOQ and construction",
+      "Turnkey Projects -Plotting Developments work completed in Maheswaran Hyderabad",
+      "Site Survey, Leveling, Complete Design, BOQ, Planning Constructions from Sketch to Complete Handover",
+      "Complete Development of 55 Acres of Land",
     ],
   },
   {
@@ -122,13 +166,14 @@ export const projects = [
     title: "Corporate Interior Work",
     category: "Corporate",
     location: "Hyderabad",
-    image: "/assets/gallery/46.jpeg",
+    image: "/assets/projects/sharath-city-corporate.jpg",
     summary:
       "Design and interior work including fixtures supply and installation.",
     details: [
       "Sharath City Mall",
-      "Interior execution",
+      "Design and  Interior work",
       "Fixtures supply and installation",
+      "Complete Interior Work for Corporate Offices",
     ],
   },
   {
@@ -136,12 +181,13 @@ export const projects = [
     title: "Retail Fit-out Portfolio",
     category: "Retail",
     location: "Pan India",
-    image: "/assets/gallery/185.jpeg",
+    image: "/assets/projects/retail-pan-india.jpg",
     summary:
       "Apparel retail experience with stores delivered across multiple locations.",
     details: [
-      "29 stores",
-      "1000–14,000 sq. ft. store sizes",
+      "Experience in Apparel Retail",
+      "Successfully completed fit-out work across multiple project areas.",
+      "Successfully launched 29+ Stores",
       "1,89,000+ sq. ft. fit-out",
     ],
   },
@@ -150,18 +196,18 @@ export const projects = [
     title: "Olive Hospitality Project",
     category: "Hospitality",
     location: "Mehrauli, New Delhi",
-    image: "/assets/gallery/217.jpeg",
+    image: "/assets/projects/olive-mehrauli.jpg",
     summary: "Civil and interior execution for Olive — Mehrauli.",
-    details: ["Civil work", "Interior work", "Hospitality"],
+    details: ["Turnkey project", "Civil work", "Interior work", "Hospitality"],
   },
   {
     slug: "olive-kolkata",
     title: "Olive Bar & Kitchen",
     category: "Hospitality",
     location: "Kolkata, West Bengal",
-    image: "/assets/gallery/225.jpeg",
+    image: "/assets/projects/olive-kolkata.jpg",
     summary: "Turnkey civil and interior work for a hospitality destination.",
-    details: ["Civil work", "Interior work", "Turnkey project"],
+    details: ["Turnkey project", "Civil work", "Interior work", "Hospitality"],
   },
 ];
 
@@ -185,29 +231,31 @@ export const socialLinks = [
   },
 ];
 
-// Gallery images 
+// Gallery images
 export const gallery = [
-  "/assets/gallery/73.jpeg",
-  "/assets/gallery/74.jpeg",
-  "/assets/gallery/75.jpeg",
-  "/assets/gallery/164.jpeg",
-  "/assets/gallery/165.jpeg",
-  "/assets/gallery/166.jpeg",
-  "/assets/gallery/171.jpeg",
-  "/assets/gallery/172.jpeg",
-  "/assets/gallery/173.jpeg",
-  "/assets/gallery/174.jpeg",
-  "/assets/gallery/178.jpeg",
-  "/assets/gallery/179.jpeg",
-  "/assets/gallery/180.jpeg",
-  "/assets/gallery/191.jpeg",
-  "/assets/gallery/194.jpeg",
-  "/assets/gallery/217.jpeg",
-  "/assets/gallery/221.jpeg",
-  "/assets/gallery/225.jpeg",
-  "/assets/gallery/226.jpeg",
-  "/assets/gallery/227.jpeg",
-  "/assets/gallery/240.jpeg",
+  "/assets/gallery/office-cabin2.jpg",
+  "/assets/gallery/conference-room4.jpg",
+  "/assets/gallery/candlelit-courtyard.jpg",
+  "/assets/gallery/candlelit-courtyard2.jpg",
+  "/assets/gallery/candlelit-dining.jpg",
+  "/assets/gallery/conference-room1.jpg",
+  "/assets/gallery/conference-room2.jpg",
+  "/assets/gallery/conference-room3.jpg",
+  "/assets/gallery/dining-room.jpg",
+  "/assets/gallery/hotel-lobby.jpg",
+  "/assets/gallery/indukuri.jpg",
+  "/assets/gallery/interior.jpg",
+  "/assets/gallery/locker-room.jpg",
+  "/assets/gallery/luxury-bedroom.jpg",
+  "/assets/gallery/mashobra-hotel.jpg",
+  "/assets/gallery/office-cabin1.jpg",
+  "/assets/gallery/office-hall.jpg",
+  "/assets/gallery/olive-bar.jpg",
+  "/assets/gallery/retail-shop1.jpg",
+  "/assets/gallery/retail-shop2.jpg",
+  "/assets/gallery/security-office.jpg",
+  "/assets/gallery/sharath-city-corporate.jpg",
+  "/assets/gallery/water-tower.jpg",
 ];
 
 // Testimonials list

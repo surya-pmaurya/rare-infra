@@ -7,7 +7,7 @@ export default function Clients() {
         <SectionHeading
           eyebrow="Experience with brands"
           title="Relationships across construction, retail & hospitality."
-          text="The supplied profile lists experience with a broad range of brands and projects. Logos below are reproduced from the provided company material."
+          text="We have successfully collaborated with a diverse range of brands, delivering exceptional construction, retail, and hospitality solutions that meet their unique needs and expectations."
         />
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {partnerLogos.map((src, i) => (
