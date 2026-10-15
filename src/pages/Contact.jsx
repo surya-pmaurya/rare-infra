@@ -125,14 +125,14 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="rounded-[2rem] bg-white p-6 shadow-soft sm:p-9"
           >
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2 hover:animate-fadeIn">
               <label className="text-xs font-bold">
                 Name
                 <input
                   type="text"
                   name="name" // Required for FormData
                   required
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="Your name"
                   autoComplete="name"
                 />
@@ -149,7 +149,7 @@ export default function Contact() {
                   onInput={(e) => {
                     e.target.value = e.target.value.replace(/[^\d+]/g, "");
                   }}
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="+91  9876543210"
                   autoComplete="phone"
                 />
@@ -160,7 +160,7 @@ export default function Contact() {
                   type="email"
                   name="email" // Required for FormData
                   required
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="you@example.com"
                   autoComplete="email"
                 />
@@ -169,7 +169,7 @@ export default function Contact() {
                 Project type
                 <select
                   name="project_type" // Required for FormData
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                 >
                   <option value="Construction">Construction</option>
                   <option value="Residential">Residential</option>
@@ -186,13 +186,12 @@ export default function Contact() {
                   name="message" // Required for FormData
                   required
                   rows="6"
-                  className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none focus:border-accent"
+                  className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="Tell us a little about your project..."
                   autoComplete="message"
                 />
               </label>
             </div>
-
             <button
               type="submit"
               disabled={status === "Sending..."}

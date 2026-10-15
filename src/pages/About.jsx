@@ -51,7 +51,7 @@ export default function About() {
         </div>
         <div className="overflow-hidden rounded-md border border-black/40 shadow-soft">
           <img
-            src="/assets/gallery/240.jpeg"
+            src="/assets/gallery/olive-bar.jpg"
             alt="Hospitality interior"
             className="h-full min-h-[460px] w-full object-cover"
           />

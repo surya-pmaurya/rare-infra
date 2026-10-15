@@ -1,6 +1,7 @@
-import { ArrowLeft, ArrowUpRight, Check, MapPin } from "lucide-react";
+import { ArrowLeft, Check, MapPin } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/siteData";
+import ContactBanner from "../components/ContactBanner";
 export default function ProjectDetails() {
   const { slug } = useParams();
   const p = projects.find((x) => x.slug === slug);
@@ -17,18 +18,16 @@ export default function ProjectDetails() {
     );
   return (
     <main className="bg-paper pt-20">
-      <section className="relative min-h-[560px] overflow-hidden bg-ink text-white">
-        <img
-          src={p.image}
-          alt={p.title}
-          className="absolute inset-0 h-full w-full object-cover opacity-55"
-        />
+      <section
+        className="relative min-h-[620px] bg-ink text-white bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: `url(${p.image})` }}
+      >
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
         <div className="container-site relative flex min-h-[560px] items-end pb-14">
           <div>
             <Link
               to="/projects"
-              className="mb-8 inline-flex items-center gap-2 text-sm text-white/65 hover:text-white"
+              className="mb-8 inline-flex items-center gap-2 text-sm text-white/75 hover:text-white"
             >
               <ArrowLeft size={16} />
               All projects
@@ -57,7 +56,7 @@ export default function ProjectDetails() {
             {p.details.map((d) => (
               <div
                 key={d}
-                className="flex items-start gap-3 rounded-2xl bg-white p-4"
+                className="flex items-start gap-3 rounded-md bg-white p-4 shadow-soft"
               >
                 <span className="rounded-full bg-accent p-1 text-white">
                   <Check size={13} />
@@ -67,23 +66,7 @@ export default function ProjectDetails() {
             ))}
           </div>
         </div>
-        <div className="rounded-[2rem] bg-ink p-8 text-white sm:p-10">
-          <div className="text-xs font-bold uppercase tracking-[.22em] text-accent">
-            Need something similar?
-          </div>
-          <h3 className="mt-4 font-display text-3xl font-extrabold">
-            Let’s discuss your next space.
-          </h3>
-          <p className="mt-4 text-sm leading-6 text-white/55">
-            Share your brief and the team can explore an integrated solution.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-black"
-          >
-            Contact us <ArrowUpRight size={16} />
-          </Link>
-        </div>
+        <ContactBanner />
       </section>
     </main>
   );
