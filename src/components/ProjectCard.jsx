@@ -1,16 +1,16 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function ProjectCard({ project, featured = false }) {
+export default function ProjectCard({ project }) {
   return (
     <article
-      className={`group overflow-hidden rounded-3xl bg-white shadow-soft ${featured ? "lg:col-span-2" : ""}`}
+      className={"group overflow-hidden rounded-md bg-white shadow-soft"}
     >
       <Link
         to={`/projects/${project.slug}`}
         className="image-hover block overflow-hidden"
       >
-        <div className={featured ? "aspect-[16/8]" : "aspect-[4/3]"}>
+        <div className={"aspect-[4/3]"}>
           <img
             src={project.image}
             alt={project.title}

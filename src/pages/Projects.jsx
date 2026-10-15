@@ -18,8 +18,10 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Selected work"
           title="Projects across sectors, places and possibilities."
-          text="The project list below is based on the supplied rare infra company profile. Add, remove or edit projects from src/data/siteData.js."
+          text="A showcase of our diverse portfolio, highlighting our expertise in delivering exceptional projects across various sectors and locations."
         />
+
+        { /* Filter buttons */ }
         <div className="mt-10 flex flex-wrap gap-2">
           {cats.map((c) => (
             <button
@@ -31,12 +33,13 @@ export default function Projects() {
             </button>
           ))}
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+
+        { /* Projects grid */ }
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-2">
           {list.map((p, i) => (
             <ProjectCard
               key={p.slug}
               project={p}
-              featured={i === 0 && list.length > 2}
             />
           ))}
         </div>
