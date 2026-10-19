@@ -3,24 +3,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+   Universal Color System (Single Source of Truth)
+*/
 :root {
   color-scheme: light;
+
+  /* --- RGB Space-Separated Channels (Supports Tailwind opacity: bg-accent/90, text-ink/70) --- */
+  --color-ink: 59 36 22;               /* #3b2416 - Deep espresso brown for hero, footer, dark cards, text */
+  --color-paper: 250 245 236;          /* #faf5ec - Warm cream canvas background */
+  --color-paper-contrast: 240 230 214; /* #f0e6d6 - Soft sand for alternating sections */
+  --color-accent: 176 122 28;          /* #b07a1c - Amber-gold for CTAs, badges, highlights */
+  --color-accent-hover: 148 99 18;     /* #946312 - Deeper bronze on hover */
+  --color-gold: 212 169 70;            /* #d4a946 - Bright premium gold accent */
+  --color-success: 22 163 74;          /* #16a34a - Green status / success */
+  --color-error: 220 38 38;            /* #dc2626 - Red status / error */
+
+  /* --- Standard CSS Color Variables (for standard CSS & inline styles) --- */
+  --ink: rgb(var(--color-ink));
+  --paper: rgb(var(--color-paper));
+  --paper-contrast: rgb(var(--color-paper-contrast));
+  --accent: rgb(var(--color-accent));
+  --accent-hover: rgb(var(--color-accent-hover));
+  --gold: rgb(var(--color-gold));
+  --success: rgb(var(--color-success));
+  --error: rgb(var(--color-error));
+
+  /* --- Semantic Role Variables --- */
+  --body-bg: var(--paper);
+  --body-text: var(--ink);
+  --selection-bg: var(--accent);
+  --selection-text: #ffffff;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
-  background: #f7f5f1;
-  color: #111;
+  background: var(--body-bg);
+  color: var(--body-text);
   font-family: Inter, sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
+
 ::selection {
-  background: #ef6d64;
-  color: #fff;
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 @layer components {
@@ -34,16 +67,17 @@ body {
     @apply mt-3 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-lg;
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-bold text-paper transition hover:-translate-y-0.5 hover:shadow-lg hover:bg-accent-hover hover:text-paper-contrast;
   }
   .btn-dark {
-    @apply inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:shadow-lg;
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-bold text-paper transition hover:-translate-y-0.5 hover:shadow-lg;
   }
 }
 
 .reveal {
   animation: reveal 0.7s ease both;
 }
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -54,15 +88,18 @@ body {
     transform: translateY(0);
   }
 }
+
 .hero-grid {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 48px 48px;
 }
+
 .image-hover img {
   transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+
 .image-hover:hover img {
   transform: scale(1.05);
 }

@@ -2,7 +2,7 @@ import SectionHeading from "../components/SectionHeading";
 import { partnerLogos } from "../data/siteData";
 export default function Clients() {
   return (
-    <main className="bg-paper pt-28">
+    <main className="bg-paper-contrast pt-28">
       <section className="container-site py-16 sm:py-24">
         <SectionHeading
           eyebrow="Experience with brands"
@@ -13,7 +13,7 @@ export default function Clients() {
           {partnerLogos.map((src, i) => (
             <div
               key={src + i}
-              className="flex min-h-32 items-center justify-center rounded-md bg-white p-7 shadow-soft"
+              className="flex min-h-32 items-center justify-center rounded-md bg-paper p-7 shadow-soft"
             >
               <img
                 src={src}
@@ -25,12 +25,12 @@ export default function Clients() {
           ))}
         </div>
       </section>
-      <section className="bg-ink py-20 text-white">
+      <section className="bg-ink py-20 text-paper">
         <div className="container-site grid gap-10 md:grid-cols-3">
           <div>
             <div className="eyebrow">Retail</div>
             <div className="mt-3 font-display text-4xl font-extrabold">29+</div>
-            <p className="mt-2 text-sm text-white/55">
+            <p className="mt-2 text-sm text-paper/55">
               Stores successfully launched pan India.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function Clients() {
             <div className="mt-3 font-display text-4xl font-extrabold">
               1.89L+
             </div>
-            <p className="mt-2 text-sm text-white/55">
+            <p className="mt-2 text-sm text-paper/55">
               Sq. ft. of retail fit-out completed.
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function Clients() {
             <div className="mt-3 font-display text-4xl font-extrabold">
               Multiple
             </div>
-            <p className="mt-2 text-sm text-white/55">
+            <p className="mt-2 text-sm text-paper/55">
               Civil and interior projects across hospitality destinations.
             </p>
           </div>

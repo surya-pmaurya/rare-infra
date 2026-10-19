@@ -11,21 +11,21 @@ export default function About() {
             A complete solution from{" "}
             <span className="text-accent">inception to completion.</span>
           </h1>
-          <p className="mt-7 max-w-3xl text-base leading-8 text-black/60">
+          <p className="mt-7 max-w-3xl text-base leading-8 text-accent">
             The company profile describes expertise spanning construction,
             interior, retail and hospitality, backed by experienced
             professionals and a commitment to client aspirations.
           </p>
         </div>
       </section>
-      <section className="bg-ink py-16 text-white sm:py-20">
+      <section className="bg-ink py-16 text-paper sm:py-20">
         <div className="container-site grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label}>
               <div className="font-display text-4xl font-extrabold text-accent">
                 {s.value}
               </div>
-              <div className="mt-2 text-xs uppercase tracking-[.12em] text-white/45">
+              <div className="mt-2 text-xs uppercase tracking-[.12em] text-paper/45">
                 {s.label}
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="overflow-hidden rounded-md border border-black/40 shadow-soft">
+        <div className="overflow-hidden rounded-md border border-ink/40 shadow-soft">
           <img
             src="/assets/gallery/olive-bar.jpg"
             alt="Hospitality interior"
@@ -59,7 +59,7 @@ export default function About() {
       </section>
 
       {/* Key Values & Leadership */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-paper-contrast py-20 sm:py-28">
         <div className="container-site">
           <SectionHeading
             eyebrow="Key values"
@@ -88,7 +88,7 @@ export default function About() {
             ].map((val, i) => (
               <div
                 key={val.title}
-                className="rounded-md border border-black/10 bg-white p-7 shadow-soft"
+                className="rounded-md border border-ink/10 bg-paper p-7 shadow-soft"
               >
                 <div className="text-5xl font-display font-extrabold text-accent">
                   0{i + 1}
@@ -96,7 +96,7 @@ export default function About() {
                 <h3 className="mt-8 font-display text-xl font-extrabold">
                   {val.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-black/55">
+                <p className="mt-2 text-sm leading-6 text-accent">
                   {val.text}
                 </p>
               </div>
@@ -104,9 +104,9 @@ export default function About() {
           </div>
 
           {/* Founder Details */}
-          <div className="mt-16 overflow-hidden rounded-2xl border border-black/10 bg-paper p-8 shadow-sm md:p-10">
+          <div className="mt-16 overflow-hidden rounded-2xl border border-ink/10 bg-paper p-8 shadow-sm md:p-10">
             <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
-              <div className="shrink-0 overflow-hidden rounded-xl border border-black/5 shadow-sm">
+              <div className="shrink-0 overflow-hidden rounded-xl border border-ink/5 shadow-sm">
                 <img
                   src="/assets/images/founder.jpg"
                   alt="Mr. Nirala Kant Maurya"
@@ -120,7 +120,7 @@ export default function About() {
                 <div className="mt-2 text-xs font-bold uppercase tracking-widest text-accent">
                   Founder
                 </div>
-                <p className="mt-6 text-sm leading-relaxed text-black/65 md:text-base md:leading-8">
+                <p className="mt-6 text-sm leading-relaxed text-ink md:text-base md:leading-8">
                   <strong className="font-bold text-ink">
                     Mr. Nirala Kant Maurya
                   </strong>{" "}
@@ -146,15 +146,16 @@ export default function About() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="flex flex-col rounded-md bg-white p-7 shadow-soft"
+              className="flex flex-col rounded-md bg-paper-contrast p-7 shadow-soft border border-ink/10"
             >
               <h3 className="font-display text-2xl font-extrabold">
                 {s.title}
               </h3>
-              <p className="mt-3 text-sm leading-6 text-black/55">{s.text}</p>
+              
+              <p className="mt-3 text-sm leading-6 text-accent">{s.text}</p>
 
               {/* Dynamic Checklist */}
-              <div className="mt-6 space-y-2 pt-4 text-xs text-black/55">
+              <div className="mt-6 space-y-2 pt-4 text-xs text-accent">
                 {s.features.map((feature, index) => (
                   <div key={index} className="flex gap-2">
                     <Check size={14} className="mt-0.5 shrink-0 text-accent" />

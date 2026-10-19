@@ -15,13 +15,13 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative min-h-[960px] overflow-hidden bg-ink text-white">
+      <section className="relative min-h-[960px] overflow-hidden bg-ink text-paper">
         <img
           src="/assets/images/hero.jpg"
           alt="rare infra project"
           className="absolute inset-0 h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/50 to-ink/10" />
         <div className="hero-grid absolute inset-0 opacity-30" />
         <div className="container-site relative flex min-h-screen items-end pb-20 pt-32 sm:pb-24">
           <div className="max-w-4xl reveal">
@@ -33,7 +33,7 @@ export default function Home() {
               <br />
               <span className="text-accent">with purpose.</span>
             </h1>
-            <p className="mt-7 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
+            <p className="mt-7 max-w-2xl text-base leading-7 text-paper/65 sm:text-lg">
               {company.name} {company.description}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
@@ -42,7 +42,7 @@ export default function Home() {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full bg-paper px-7 py-3.5 text-sm font-bold text-ink transition hover:-translate-y-0.5"
               >
                 Get in touch <ArrowUpRight size={17} />
               </Link>
@@ -51,21 +51,21 @@ export default function Home() {
         </div>
         <a
           href="#about"
-          className="absolute bottom-7 right-7 hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[.25em] text-white/45 lg:flex"
+          className="absolute bottom-7 right-7 hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[.25em] text-paper/45 lg:flex"
         >
           Scroll to explore <ArrowDown size={14} />
         </a>
       </section>
 
       {/* Stats Section */}
-      <section className="bg-ink py-16 text-white sm:py-20">
+      <section className="bg-ink py-16 text-paper sm:py-20">
         <div className="container-site grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="border-l border-white/10 pl-5">
+            <div key={s.label} className="border-l border-paper/10 pl-5">
               <div className="font-display text-4xl font-extrabold text-accent sm:text-5xl">
                 {s.value}
               </div>
-              <div className="mt-2 text-xs uppercase tracking-[.12em] text-white/45">
+              <div className="mt-2 text-xs uppercase tracking-[.12em] text-paper/45">
                 {s.label}
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-[#ebe8e2] py-20 sm:py-28">
+      <section id="about" className="bg-paper-contrast py-20 sm:py-28">
         <div className="container-site max-w-8xl mx-auto">
           <div>
             <SectionHeading
@@ -84,20 +84,20 @@ export default function Home() {
             />
 
             <div className="mt-9 grid gap-6 sm:grid-cols-2">
-              <div className="border-t border-black/10 pt-5">
+              <div className="border-t border-ink/10 pt-5">
                 <div className="font-display text-xl font-extrabold">
                   Vision
                 </div>
-                <p className="mt-2 text-sm leading-6 text-black/55">
+                <p className="mt-2 text-sm leading-6 text-accent">
                   {company.vision}
                 </p>
               </div>
 
-              <div className="border-t border-black/10 pt-5">
+              <div className="border-t border-ink/10 pt-5">
                 <div className="font-display text-xl font-extrabold">
                   Mission
                 </div>
-                <p className="mt-2 text-sm leading-6 text-black/55">
+                <p className="mt-2 text-sm leading-6 text-accent">
                   {company.mission}
                 </p>
               </div>
@@ -114,7 +114,7 @@ export default function Home() {
               ].map((v) => (
                 <span
                   key={v}
-                  className="rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-bold"
+                  className="rounded-full border border-ink/10 bg-paper px-4 py-2 text-xs font-bold"
                 >
                   {v}
                 </span>
@@ -141,7 +141,7 @@ export default function Home() {
             {services.map((s, i) => (
               <article
                 key={s.title}
-                className="group overflow-hidden rounded-md bg-white shadow-soft"
+                className="group overflow-hidden rounded-md bg-paper shadow-soft"
               >
                 <div className="image-hover aspect-[16/10] overflow-hidden">
                   <img
@@ -158,9 +158,7 @@ export default function Home() {
                   <h3 className="mt-2 font-display text-2xl font-extrabold">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-black/55">
-                    {s.text}
-                  </p>
+                  <p className="mt-2 text-sm leading-6 text-accent">{s.text}</p>
                 </div>
               </article>
             ))}
@@ -169,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="bg-[#ebe8e2] py-20 sm:py-28">
+      <section className="bg-paper-contrast py-20 sm:py-28">
         <div className="container-site">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <SectionHeading
@@ -204,17 +202,15 @@ export default function Home() {
                 {testimonials.map((t) => (
                   <blockquote
                     key={t.role}
-                    className="rounded-md border border-black/10 bg-white p-6 shadow-sm"
+                    className="rounded-md border border-gold bg-paper-contrast p-6 shadow-sm"
                   >
                     <div className="text-accent">“</div>
-                    <p className="mt-3 text-sm leading-6 text-black/70">
-                      {t.quote}
-                    </p>
-                    <footer className="mt-6 border-t border-black/10 pt-4">
-                      <div className="text-xs font-bold text-black">
+                    <p className="mt-3 text-sm leading-6 text-ink/60">{t.quote}</p>
+                    <footer className="mt-6 border-t border-gold/30 pt-4">
+                      <div className="text-xs font-bold text-ink">
                         {t.name}
                       </div>
-                      <div className="mt-1 text-[10px] uppercase tracking-[.18em] text-black/50">
+                      <div className="mt-1 text-[10px] uppercase tracking-[.18em] text-ink/70">
                         {t.role}
                       </div>
                     </footer>
@@ -227,7 +223,7 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="bg-[#ebe8e2] py-20 sm:py-24">
+      <section className="bg-paper-contrast py-20 sm:py-24">
         <div className="container-site">
           <SectionHeading
             eyebrow="Trusted relationships"
@@ -237,7 +233,7 @@ export default function Home() {
             {partnerLogos.slice(0, 14).map((src, i) => (
               <div
                 key={src + i}
-                className="flex h-24 items-center justify-center rounded-2xl bg-white p-4"
+                className="flex h-24 items-center justify-center rounded-2xl bg-paper p-4"
               >
                 <img
                   src={src}

@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="bg-paper pt-28">
+    <main className="bg-paper-contrast pt-28">
       <section className="container-site py-16 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
           <div>
@@ -60,7 +60,7 @@ export default function Contact() {
               <div className="flex gap-4">
                 <Phone className="text-accent" />
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-black/35">
+                  <div className="text-xs font-bold uppercase tracking-widest text-ink/35">
                     Phone
                   </div>
                   <div className="mt-1 text-sm font-semibold">
@@ -83,7 +83,7 @@ export default function Contact() {
               <div className="flex gap-4">
                 <Mail className="text-accent" />
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-black/35">
+                  <div className="text-xs font-bold uppercase tracking-widest text-ink/35">
                     Email
                   </div>
                   <div className="mt-1 text-sm font-semibold">
@@ -101,13 +101,13 @@ export default function Contact() {
               <div className="flex gap-4">
                 <MapPin className="text-accent" />
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-black/35">
+                  <div className="text-xs font-bold uppercase tracking-widest text-ink/35">
                     Offices
                   </div>
                   {company.offices.map((office) => (
                     <div
                       key={office.city}
-                      className="mt-1 text-sm leading-6 text-black/60"
+                      className="mt-1 text-sm leading-6 text-accent"
                     >
                       <strong className="font-bold text-ink">
                         {office.city}
@@ -123,7 +123,7 @@ export default function Contact() {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="rounded-[2rem] bg-white p-6 shadow-soft sm:p-9"
+            className="rounded-[2rem] bg-paper p-6 shadow-soft sm:p-9"
           >
             <div className="grid gap-5 sm:grid-cols-2 hover:animate-fadeIn">
               <label className="text-xs font-bold">
@@ -132,7 +132,7 @@ export default function Contact() {
                   type="text"
                   name="name" // Required for FormData
                   required
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-ink/10 bg-paper-contrast px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="Your name"
                   autoComplete="name"
                 />
@@ -149,7 +149,7 @@ export default function Contact() {
                   onInput={(e) => {
                     e.target.value = e.target.value.replace(/[^\d+]/g, "");
                   }}
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-ink/10 bg-paper-contrast px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="+91  9876543210"
                   autoComplete="phone"
                 />
@@ -160,7 +160,7 @@ export default function Contact() {
                   type="email"
                   name="email" // Required for FormData
                   required
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-ink/10 bg-paper-contrast px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="you@example.com"
                   autoComplete="email"
                 />
@@ -169,7 +169,7 @@ export default function Contact() {
                 Project type
                 <select
                   name="project_type" // Required for FormData
-                  className="mt-2 w-full rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
+                  className="mt-2 w-full rounded-xl border border-ink/10 bg-paper-contrast px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                 >
                   <option value="Construction">Construction</option>
                   <option value="Residential">Residential</option>
@@ -186,7 +186,7 @@ export default function Contact() {
                   name="message" // Required for FormData
                   required
                   rows="6"
-                  className="mt-2 w-full resize-none rounded-xl border border-black/10 bg-paper px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
+                  className="mt-2 w-full resize-none rounded-xl border border-ink/10 bg-paper-contrast px-4 py-3 text-sm font-semibold outline-none transition-colors hover:border-accent focus:border-accent"
                   placeholder="Tell us a little about your project..."
                   autoComplete="message"
                 />
@@ -203,7 +203,7 @@ export default function Contact() {
             {/* Status Message Display */}
             {status && status !== "Sending..." && (
               <p
-                className={`mt-4 text-center text-sm font-bold ${status.includes("Success") ? "text-red-600" : "text-green-600"}`}
+                className={`mt-4 text-center text-sm font-bold ${status.toLowerCase().includes("success") ? "text-success" : "text-error"}`}
               >
                 {status}
               </p>

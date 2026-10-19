@@ -13,13 +13,13 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const navClass = ({ isActive }) =>
-    `text-sm font-semibold transition ${isActive ? "text-accent" : "text-white/75 hover:text-white"}`;
+    `text-sm font-semibold transition ${isActive ? "text-paper" : "text-paper/60 hover:text-paper"}`;
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/30">
+    <header className="fixed inset-x-0 top-0 z-50 bg-ink/80 backdrop-blur-md border-b border-ink/30">
       <div className="container-site flex h-20 items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-3 text-white"
+          className="flex items-center gap-3 text-paper"
           onClick={() => setOpen(false)}
         >
           <img
@@ -31,7 +31,7 @@ export default function Header() {
             <div className="font-display text-xl font-extrabold tracking-tight">
               rare infra
             </div>
-            <div className="mt-1 text-[9px] uppercase tracking-[.25em] text-white/50">
+            <div className="mt-1 text-[9px] uppercase tracking-[.25em] text-paper/50">
               rare biz group
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function Header() {
           </Link>
         </nav>
         <button
-          className="rounded-full border border-white/20 p-2 text-white lg:hidden"
+          className="rounded-full border border-paper/20 p-2 text-paper lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -56,13 +56,13 @@ export default function Header() {
       </div>
       {open && (
         <div className="container-site pb-5 lg:hidden">
-          <div className="rounded-2xl border border-white/10 bg-black/95 p-4 shadow-2xl">
+          <div className="rounded-2xl border border-paper/10 bg-ink/95 p-4 shadow-2xl">
             {links.map(([to, label]) => (
               <Link
                 key={label}
                 to={to}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-semibold text-white/80 hover:bg-white/5 hover:text-white"
+                className="block rounded-xl px-4 py-3 text-sm font-semibold text-paper/80 hover:bg-paper/5 hover:text-paper"
               >
                 {label}
               </Link>

@@ -17,7 +17,7 @@ function NotFound() {
       </h1>
       <a
         href="/"
-        className="mt-6 inline-flex rounded-full bg-ink px-6 py-3 text-sm font-bold text-white"
+        className="mt-6 inline-flex rounded-full bg-ink px-6 py-3 text-sm font-bold text-paper"
       >
         Back home
       </a>

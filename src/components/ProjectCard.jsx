@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ProjectCard({ project }) {
   return (
     <article
-      className={"group overflow-hidden rounded-md bg-white shadow-soft"}
+      className={"group overflow-hidden rounded-md bg-paper shadow-soft"}
     >
       <Link
         to={`/projects/${project.slug}`}
@@ -24,7 +24,7 @@ export default function ProjectCard({ project }) {
           <span className="text-[10px] font-bold uppercase tracking-[.22em] text-accent">
             {project.category}
           </span>
-          <span className="flex items-center gap-1 text-xs text-black/45">
+          <span className="flex items-center gap-1 text-xs text-ink/45">
             <MapPin size={13} />
             {project.location}
           </span>
@@ -32,7 +32,7 @@ export default function ProjectCard({ project }) {
         <h3 className="mt-3 font-display text-2xl font-extrabold tracking-tight">
           {project.title}
         </h3>
-        <p className="mt-3 text-sm leading-6 text-black/55">
+        <p className="mt-3 text-sm leading-6 text-accent">
           {project.summary}
         </p>
         <Link

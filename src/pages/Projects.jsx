@@ -13,7 +13,7 @@ export default function Projects() {
     [filter],
   );
   return (
-    <main className="bg-paper pt-28">
+    <main className="bg-paper-contrast pt-28">
       <section className="container-site py-16 sm:py-24">
         <SectionHeading
           eyebrow="Selected work"
@@ -27,7 +27,7 @@ export default function Projects() {
             <button
               key={c}
               onClick={() => setFilter(c)}
-              className={`rounded-full px-5 py-2.5 text-xs font-bold transition ${filter === c ? "bg-ink text-white" : "border border-black/10 bg-white hover:border-black/30"}`}
+              className={`rounded-full px-5 py-2.5 text-xs font-bold transition ${filter === c ? "bg-ink text-paper" : "border border-ink/10 bg-paper hover:border-ink/30"}`}
             >
               {c}
             </button>

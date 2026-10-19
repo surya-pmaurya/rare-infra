@@ -5,7 +5,7 @@ import { gallery } from "../data/siteData";
 export default function Gallery() {
   const [selected, setSelected] = useState(null);
   return (
-    <main className="bg-paper pt-28">
+    <main className="bg-paper-contrast pt-28">
       <section className="container-site py-16 sm:py-24">
         <SectionHeading
           eyebrow="Gallery"
@@ -17,7 +17,7 @@ export default function Gallery() {
             <button
               key={src}
               onClick={() => setSelected(src)}
-              className="image-hover mb-4 block w-full overflow-hidden rounded-2xl text-left"
+              className="image-hover mb-4 block w-full overflow-hidden rounded-2xl text-left shadow-soft"
             >
               <img
                 src={src}
@@ -31,11 +31,11 @@ export default function Gallery() {
       </section>
       {selected && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-5"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/90 p-5"
           onClick={() => setSelected(null)}
         >
           <button
-            className="absolute right-5 top-5 rounded-full bg-white/10 p-3 text-white"
+            className="absolute right-5 top-5 rounded-full bg-paper/10 p-3 text-paper"
             aria-label="Close"
           >
             <X />

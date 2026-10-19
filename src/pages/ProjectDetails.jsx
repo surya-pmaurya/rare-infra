@@ -17,17 +17,17 @@ export default function ProjectDetails() {
       </main>
     );
   return (
-    <main className="bg-paper pt-20">
+    <main className="bg-paper-contrast pt-20">
       <section
-        className="relative min-h-[620px] bg-ink text-white bg-fixed bg-center bg-cover"
+        className="relative min-h-[620px] bg-ink text-paper bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url(${p.image})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
         <div className="container-site relative flex min-h-[560px] items-end pb-14">
           <div>
             <Link
               to="/projects"
-              className="mb-8 inline-flex items-center gap-2 text-sm text-white/75 hover:text-white"
+              className="mb-8 inline-flex items-center gap-2 text-sm text-paper/75 hover:text-paper"
             >
               <ArrowLeft size={16} />
               All projects
@@ -36,7 +36,7 @@ export default function ProjectDetails() {
             <h1 className="mt-3 max-w-4xl font-display text-5xl font-extrabold tracking-tight sm:text-7xl">
               {p.title}
             </h1>
-            <div className="mt-5 flex items-center gap-2 text-sm text-white/70">
+            <div className="mt-5 flex items-center gap-2 text-sm text-paper/70">
               <MapPin size={16} />
               {p.location}
             </div>
@@ -49,16 +49,16 @@ export default function ProjectDetails() {
           <h2 className="mt-3 font-display text-4xl font-extrabold">
             Designed around the brief. Delivered with care.
           </h2>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-black/60">
+          <p className="mt-6 max-w-2xl text-base leading-8 text-accent">
             {p.summary}
           </p>
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
             {p.details.map((d) => (
               <div
                 key={d}
-                className="flex items-start gap-3 rounded-md bg-white p-4 shadow-soft"
+                className="flex items-start gap-3 rounded-md bg-paper p-4 shadow-soft"
               >
-                <span className="rounded-full bg-accent p-1 text-white">
+                <span className="rounded-full bg-accent p-1 text-paper">
                   <Check size={13} />
                 </span>
                 <span className="text-sm font-semibold">{d}</span>
