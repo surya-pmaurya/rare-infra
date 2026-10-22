@@ -113,7 +113,7 @@ export default function Footer() {
             © Copyright {new Date().getFullYear()} rare infra. All rights
             reserved.
           </div>
-          <div>Construction · Retail · Hospitality · Interiors</div>
+          <div>Plotting · Construction · Retail · Hospitality · Interiors</div>
         </div>
       </div>
     </footer>
