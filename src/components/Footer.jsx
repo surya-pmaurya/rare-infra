@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <img
-                src="/assets/logos/rareinfra.jpeg"
+                src="/assets/logos/rareinfra.png"
                 alt="rare infra"
                 className="h-11 w-11 rounded-full bg-paper object-contain"
               />
